@@ -3,25 +3,26 @@
 ## Ejercicio realizado en `dev`
 
 1. El punto de partida era `de3faf2`, igual a `origin/dev`; no había un commit nuevo compartido.
-2. Se preparó el commit `feat: update player and docs` con `PlayerController.cs`, `README.md` y `archivo_de_prueba.txt` para reproducir el error del caso.
-3. Al revisar el contenido, se identificó que `archivo_de_prueba.txt` no correspondía al propósito del commit.
-4. Como el commit seguía únicamente en el repositorio local, se quitó el archivo y se corrigió con `git commit --amend --no-edit`.
+2. Se preparó `feat: update player and docs` con `PlayerController.cs`, `README.md` y `archivo_de_prueba.txt` para reproducir el error.
+3. Se identificó el archivo ajeno y, como el commit aún era local, se quitó y se corrigió con `git commit --amend --no-edit`.
+4. El commit corregido fue `080156d`. Más tarde se integró en `origin/dev` dentro del commit `ecac5f0`, que también contiene la corrección del proyecto y esta evidencia.
 
 ## Resultado
 
-El commit corregido conserva los cambios del controlador y la documentación, y excluye `archivo_de_prueba.txt`. El commit corregido está en `dev`, aún no se ha publicado en `origin/dev`. No se reescribió historia compartida y no se creó otra rama.
+El historial publicado conserva únicamente `PlayerController.cs` y `README.md` dentro del commit corregido; `archivo_de_prueba.txt` no está versionado ni existe en la carpeta de trabajo. No se reescribió historia después de que el commit llegó a `origin/dev`.
 
 ## Evidencia de historial
 
 ```text
 Commit inicial: feat: update player and docs
 Archivos iniciales: PlayerController.cs, README.md, archivo_de_prueba.txt
-Acción correctiva: git rm archivo_de_prueba.txt
-                   git commit --amend --no-edit
-Resultado: commit local con PlayerController.cs y README.md; sin archivo de prueba
+Corrección local: git rm archivo_de_prueba.txt
+                  git commit --amend --no-edit
+Commit corregido: 080156d
+Integración posterior en origin/dev: ecac5f0
 ```
 
-Los demás cambios pendientes del proyecto quedaron fuera de este commit.
+Los demás cambios del proyecto quedaron fuera del commit 080156d.
 
 ## Capturas
 
