@@ -1,0 +1,1 @@
+Archivo temporal inocuo para demostrar un archivo generado que se versionó por error.
