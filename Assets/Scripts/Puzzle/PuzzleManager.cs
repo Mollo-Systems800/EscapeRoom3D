@@ -1,52 +1,65 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
-// Versión integrada (Caso 10): une la validación de código de A
-// con el control de intentos y el evento de B en un solo PuzzleManager.
+// Integrates code validation, limited attempts, and a persistent solve event.
 public class PuzzleManager : MonoBehaviour
 {
     [SerializeField] private string correctCode = "1234";
-    [SerializeField] private int maxAttempts = 3;
-    public UnityEvent onPuzzleSolved;
-
-    [Header("Prueba en Play Mode")]
+    [SerializeField, Min(1)] private int maxAttempts = 3;
     [SerializeField] private string testCode = "1234";
+
+    public UnityEvent onPuzzleSolved = new UnityEvent();
 
     private int attempts;
     private bool solved;
 
     public bool IsSolved => solved;
+    public int Attempts => attempts;
 
     public bool TrySolve(string code)
     {
-        if (solved) return true;
+        if (solved)
+        {
+            return true;
+        }
 
         if (attempts >= maxAttempts)
         {
-            Debug.Log("Sin intentos restantes");
+            Debug.Log("Sin intentos restantes", this);
             return false;
         }
 
         attempts++;
-
         if (code == correctCode)
         {
             solved = true;
-            Debug.Log("Puzzle resuelto: el cofre se abre");
+            Debug.Log("Puzzle resuelto: el cofre se abre", this);
             onPuzzleSolved?.Invoke();
-        }
-        else
-        {
-            Debug.Log("Código incorrecto (" + attempts + "/" + maxAttempts + ")");
+            return true;
         }
 
-        return solved;
+        Debug.Log($"Código incorrecto ({attempts}/{maxAttempts})", this);
+        return false;
     }
 
     private void Update()
     {
-        // 1 = código incorrecto, Enter = código de prueba
-        if (Input.GetKeyDown(KeyCode.Alpha1)) TrySolve("0000");
-        if (Input.GetKeyDown(KeyCode.Return)) TrySolve(testCode);
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard == null)
+        {
+            return;
+        }
+
+        // 1 submits an incorrect code; Enter submits the configured test code.
+        if (keyboard.digit1Key.wasPressedThisFrame)
+        {
+            TrySolve("0000");
+        }
+
+        if (keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame)
+        {
+            TrySolve(testCode);
+        }
     }
 }

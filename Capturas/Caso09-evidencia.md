@@ -1,22 +1,17 @@
-# Caso 09 — Evidencia
+# Caso 09 — Evidencia actualizada
 
-## Resultado
+## Integración en `dev`
 
-- Conflicto reproducido: `Assets/Scripts/OldDoorController.cs` fue eliminado en `Feature_PlayerMovement` y modificado en `dev`.
-- Resolución: se conservó la versión modificada del script y su `.meta`, porque no existe un `DoorController` sustituto.
-- Búsqueda de referencias: la única coincidencia en `Assets` es la declaración de la clase `OldDoorController`.
+- Se conservó y actualizó `Assets/Scripts/OldDoorController.cs`.
+- `OldDoorController` está conectado al objeto `Door` de `Assets/Scenes/MainScene.unity`.
+- La puerta gira al pulsar **E** cuando el jugador está a 3.5 unidades o menos.
+- Se migró la lectura de teclado de los scripts de jugador y puerta al paquete Input System, coherente con `Active Input Handling = Input System Package`.
 
-## Historial
+## Validación disponible
 
-- `b605874` — commit base del controlador.
-- `92fa6b7` — eliminación en `Feature_PlayerMovement` (`refactor: remove old door controller`).
-- `8f90fe9` — modificación en `dev` (`fix: update old door controller`).
-- `a1cef62` — merge de resolución en `dev`, conservando la versión modificada.
-
-## Validación
-
-No se pudo abrir Play Mode: no había una ventana de Unity disponible y la escena no contiene una puerta. `dotnet build --no-restore` tampoco pudo compilar porque falta `Temp/obj/Assembly-CSharp-Editor/project.assets.json`; el intento de `dotnet restore` terminó sin diagnóstico.
+- Referencias estáticas de escena y script: `Door` contiene `OldDoorController`; el objeto jugador de la escena mantiene el nombre `Player` que usa el controlador.
+- No pude ejecutar Play Mode ni volver a capturar la interfaz de Unity: el arranque por lotes terminó con código 1 antes de ejecutar el método de reparación, debido al error del cliente de licencias de Unity (sin entitlements disponibles). Las imágenes previas en `Capturas/Caso08` son evidencia histórica y no documentan esta corrección.
 
 ## Capturas
 
-No se generaron capturas de pantalla: esta sesión no expuso ventanas de VS Code o Unity (inventario de apps vacío). Esta bitácora deja los commits y la decisión verificables para el informe. La carpeta `Capturas` se creó porque no existía una carpeta de evidencias en la raíz del proyecto.
+No se generaron capturas nuevas en esta sesión porque no hubo una ventana de Unity accesible. La evidencia visual del caso 09 queda pendiente de tomar en Unity con la licencia del editor activa.
