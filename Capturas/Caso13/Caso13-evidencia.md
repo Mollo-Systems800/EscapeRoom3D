@@ -1,18 +1,15 @@
-# Caso 13 — Archivo que debía estar en `.gitignore`
+# Caso 13 — Archivo que debía estar en .gitignore
 
 ## Ejercicio realizado en `dev`
-
-1. Se creó `TempLaboratorio/archivo_generado.txt` con contenido de prueba inocuo y se comprobó que al principio no estaba ignorado.
-2. Se versionó deliberadamente en `test: add generated file before ignore rule` (`d2487b0`). `git ls-files` confirmó que estaba tracked.
-3. Se añadió `/TempLaboratorio/` a `.gitignore`.
-4. Como la regla no elimina por sí sola un archivo ya tracked, se ejecutó `git rm -r --cached -- TempLaboratorio`.
-5. Se verificó que `git check-ignore -v` identifica la regla y que el archivo sigue existiendo localmente.
-6. Se preparó el commit `chore: fix ignored files` para quitarlo del índice y conservar la regla.
-
-## Resultado esperado
-
-Tras el commit correctivo, el archivo permanece en `TempLaboratorio` en esta máquina, Git deja de seguirlo y nuevas salidas de esa carpeta quedan ignoradas. El commit inicial conserva la reproducción del error en el historial del ejercicio.
+1. Se creó `TempLaboratorio/archivo_generado.txt` y se versionó por error: `d2487b0 test: add generated file before ignore rule`.
+2. Se agregó `/TempLaboratorio/` a `.gitignore`.
+3. Como la regla no saca un archivo que ya está en seguimiento, se ejecutó `git rm -r --cached TempLaboratorio`.
+4. Commit: `393f4dd chore: fix ignored files`. `git check-ignore -v` muestra la regla y el archivo sigue existiendo en la PC.
 
 ## Capturas
 
-No había una ventana de VS Code o Unity accesible para capturar; el inventario de aplicaciones está vacío. El historial de Git, `git ls-files`, `git check-ignore -v` y esta bitácora documentan el procedimiento.
+| Captura | Qué muestra |
+|---|---|
+| [Caso13_01_Antes_archivo_tracked.jpg](Caso13_01_Antes_archivo_tracked.jpg) | Antes: el archivo aparece versionado |
+| [Caso13_02_gitignore_y_Despues.jpg](Caso13_02_gitignore_y_Despues.jpg) | Regla en .gitignore y commit de corrección |
+| [Caso13_03_Despues_archivo_ignorado.jpg](Caso13_03_Despues_archivo_ignorado.jpg) | Después: el archivo queda ignorado |
