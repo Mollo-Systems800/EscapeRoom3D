@@ -30,5 +30,15 @@ public class GameManager : MonoBehaviour
         key.transform.position = keySpawnPosition;
         key.transform.localScale = new Vector3(0.3f, 0.15f, 0.6f);
         key.AddComponent<KeyItem>();
+        key.SetActive(false);
+
+        PuzzleManager puzzle = FindFirstObjectByType<PuzzleManager>();
+        if (puzzle == null)
+        {
+            Debug.LogError("GameManager: falta PuzzleManager para entregar la llave", this);
+            return;
+        }
+
+        puzzle.onPuzzleSolved.AddListener(() => key.SetActive(true));
     }
 }
