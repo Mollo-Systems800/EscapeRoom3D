@@ -1,0 +1,39 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 6f;
+
+    private void Update()
+    {
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard == null)
+        {
+            return;
+        }
+
+        Move();
+        if (keyboard.eKey.wasPressedThisFrame)
+        {
+            Debug.Log("Interaction key pressed: E", this);
+        }
+    }
+
+    private void Move()
+    {
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard == null)
+        {
+            return;
+        }
+
+        float horizontal = (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed ? 1f : 0f)
+            - (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed ? 1f : 0f);
+        float vertical = (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed ? 1f : 0f)
+            - (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed ? 1f : 0f);
+
+        Vector3 movement = Vector3.ClampMagnitude(new Vector3(horizontal, 0f, vertical), 1f);
+        transform.Translate(movement * speed * Time.deltaTime);
+    }
+}
