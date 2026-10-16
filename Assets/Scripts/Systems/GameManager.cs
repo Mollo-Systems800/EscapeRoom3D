@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // Punto de arranque de la partida.
+        Initialize();
     }
 
     public void Initialize()
