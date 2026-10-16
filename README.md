@@ -11,3 +11,9 @@ CONTROLES (CASOS 07-10)
 - Movimiento: W, A, S, D o flechas.
 - Puerta: E cuando el jugador está cerca.
 - Puzzle: 1 para enviar un código incorrecto; Enter para probar el código configurado.
+
+ELEMENTOS DEL JUEGO
+- Player: movimiento e interacción.
+- Chest + PuzzleManager: se abre al resolver el código.
+- KeyItem: llave que se obtiene del cofre.
+- Door: salida final.
