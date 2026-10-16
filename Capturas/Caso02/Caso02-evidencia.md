@@ -49,3 +49,4 @@
 | [Caso02_38.jpg](Caso02_38.jpg) | GitHub > Branches: main, dev y ramas Feature_* publicadas |
 | [Caso02_39.jpg](Caso02_39.jpg) | GitHub > Branches: main, dev y ramas Feature_* publicadas |
 | [Caso02_40.jpg](Caso02_40.jpg) | GitHub > Branches: main, dev y ramas Feature_* publicadas |
+| [Caso02_41_Graph_dev_Cambios_en_el_readme.jpg](Caso02_41_Graph_dev_Cambios_en_el_readme.jpg) | Graph: commit de prueba "Cambios en el readme" en dev sobre "Se adicionó el PlayerController.cs" |

@@ -25,3 +25,6 @@
 | [Caso03_15.jpg](Caso03_15.jpg) | Graph después de la corrección |
 | [Caso03_16.jpg](Caso03_16.jpg) | Unity: Player y PlayerController en Assets/Scripts |
 | [Caso03_17.jpg](Caso03_17.jpg) | GitHub: Feature_PlayerMovement con 'feat: add player movement' |
+| [Caso03_18_GitGraph_ramas_en_8ea34b3.jpg](Caso03_18_GitGraph_ramas_en_8ea34b3.jpg) | Git Graph antes del error: dev, Feature_Animation, RamaEquivocada y main en 8ea34b30 |
+| [Caso03_19_Commit_en_RamaEquivocada.jpg](Caso03_19_Commit_en_RamaEquivocada.jpg) | Problema: el commit "Cambio Paralelo" (2f5ffc9e) quedó en RamaEquivocada |
+| [Caso03_20_Detalle_commit_GitGraph.jpg](Caso03_20_Detalle_commit_GitGraph.jpg) | Git Graph: detalle del commit 8ea34b30 (autor, padre y archivos) |

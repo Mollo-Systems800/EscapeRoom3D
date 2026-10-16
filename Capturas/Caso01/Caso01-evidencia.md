@@ -21,3 +21,4 @@
 | [Caso01_10.jpg](Caso01_10.jpg) | git clone del repositorio |
 | [Caso01_11.jpg](Caso01_11.jpg) | Proyecto abierto en VS Code en la rama main |
 | [Caso01_12.jpg](Caso01_12.jpg) | Confirmación al equipo: remoto verificado |
+| [Caso01_13_SourceControl_antes_primer_commit_gitignore.jpg](Caso01_13_SourceControl_antes_primer_commit_gitignore.jpg) | Source Control antes del primer commit: 68 archivos pendientes y el .gitignore de Unity (Library/, Temp/, Logs/, obj/ no aparecen) |
