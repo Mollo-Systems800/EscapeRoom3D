@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 6f;
 
     private void Update()
     {
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         float vertical = (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed ? 1f : 0f)
             - (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed ? 1f : 0f);
 
-        Vector3 movement = new Vector3(horizontal, 0f, vertical);
+        Vector3 movement = Vector3.ClampMagnitude(new Vector3(horizontal, 0f, vertical), 1f);
         transform.Translate(movement * speed * Time.deltaTime);
     }
 }
