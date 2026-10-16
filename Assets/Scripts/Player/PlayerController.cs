@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if (keyboard.eKey.wasPressedThisFrame)
         {
-            Debug.Log("Interaction key pressed");
+            Debug.Log("Interaction key pressed: E", this);
         }
     }
 
