@@ -1,4 +1,4 @@
-# Evidencias — Escape Room 3D (Casos 0 a 16)
+# Evidencias — Escape Room 3D (Casos 0 a 17)
 
 Equipo: Hugo Nava (roles A y B) · Alaitz Keyra Felipez Ledezma (roles C y D). Unity 6000.5.5f1.
 
@@ -21,4 +21,5 @@ Equipo: Hugo Nava (roles A y B) · Alaitz Keyra Felipez Ledezma (roles C y D). U
 | 14 | Feature desactualizada respecto a Dev | ✔ | ✔ | [Caso14](Caso14/Caso14-evidencia.md) |
 | 15 | Conflicto en varios archivos | ✔ | ✔ | [Caso15](Caso15/Caso15-evidencia.md) |
 | 16 | Accept Both rompe el juego | ✔ | ✔ | [Caso16](Caso16/Caso16-evidencia.md) |
+| 17 | Revert de un cambio compartido | ✔ | ✔ | [Caso17](Caso17/Caso17-evidencia.md) |
 | — | Revisión general (escena) | — | ✔ | [Revision](Revision/Revision-evidencia.md) |
