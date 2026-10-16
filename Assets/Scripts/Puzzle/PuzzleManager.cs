@@ -24,6 +24,12 @@ public class PuzzleManager : MonoBehaviour
             return true;
         }
 
+        if (string.IsNullOrWhiteSpace(code))
+        {
+            Debug.Log("Ingresa un código antes de intentar abrir el cofre", this);
+            return false;
+        }
+
         if (attempts >= maxAttempts)
         {
             Debug.Log("Sin intentos restantes", this);
@@ -31,7 +37,7 @@ public class PuzzleManager : MonoBehaviour
         }
 
         attempts++;
-        if (code == correctCode)
+        if (string.Equals(code.Trim(), correctCode, System.StringComparison.Ordinal))
         {
             solved = true;
             Debug.Log("Puzzle resuelto: el cofre se abre", this);
