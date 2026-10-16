@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // Punto de arranque de la partida.
+        Debug.Log("GameManager: iniciando partida (B)", this);
+        Initialize();
     }
 
     public void Initialize()
