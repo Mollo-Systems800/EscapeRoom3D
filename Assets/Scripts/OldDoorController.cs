@@ -37,7 +37,7 @@ public class OldDoorController : MonoBehaviour
     {
         Keyboard keyboard = Keyboard.current;
         if (keyboard != null && keyboard.eKey.wasPressedThisFrame && player != null
-            && Vector3.Distance(player.position, transform.position) <= interactionDistance)
+            && Vector3.Distance(player.position, transform.position) >= interactionDistance)
         {
             ToggleDoor();
         }
