@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 4f;
 
     private void Update()
     {
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if (keyboard.eKey.wasPressedThisFrame)
         {
-            Debug.Log("Interaction key pressed");
+            Debug.Log("Interaction key pressed: E", this);
         }
     }
 
