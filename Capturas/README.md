@@ -1,4 +1,4 @@
-# Evidencias — Escape Room 3D (Casos 0 a 13)
+# Evidencias — Escape Room 3D (Casos 0 a 14)
 
 Equipo: Hugo Nava (roles A y B) · Alaitz Keyra Felipez Ledezma (roles C y D). Unity 6000.5.5f1.
 
@@ -18,4 +18,5 @@ Equipo: Hugo Nava (roles A y B) · Alaitz Keyra Felipez Ledezma (roles C y D). U
 | 11 | Cambios en ProjectSettings | ✔ | ✔ | [Caso11](Caso11/Caso11-evidencia.md) |
 | 12 | Commit incorrecto | ✔ | ✔ | [Caso12](Caso12/Caso12-evidencia.md) |
 | 13 | Archivo que debía estar en .gitignore | ✔ | ✔ | [Caso13](Caso13/Caso13-evidencia.md) |
+| 14 | Feature desactualizada respecto a Dev | ✔ | ✔ | [Caso14](Caso14/Caso14-evidencia.md) |
 | — | Revisión general (escena) | — | ✔ | [Revision](Revision/Revision-evidencia.md) |
