@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     {
         // Punto de arranque de la partida.
         Debug.Log("GameManager: iniciando partida (B)", this);
-        Initialize();
+        this.Initialize(); // B: prepara la partida al arrancar
     }
 
     public void Initialize()
