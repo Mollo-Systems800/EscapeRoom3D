@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4364602523797999213}
   - component: {fileID: 2156967555327759686}
   - component: {fileID: 1302570180308545316}
+  - component: {fileID: 6473201800485882351}
   - component: {fileID: -3461074755964637690}
   - component: {fileID: 7515665320301837505}
   m_Layer: 0
@@ -130,6 +131,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 6
+--- !u!114 &6473201800485882351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507197661870359622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666c792ba9037be4ba35b9d620ffae89, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  interactionDistance: 3
 --- !u!54 &-3461074755964637690
 Rigidbody:
   m_ObjectHideFlags: 0
